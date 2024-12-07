@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../models/todo_model.dart';
-import '../providers/todo_provider.dart';
+import '../data/models/todo_model.dart';
+import 'provider/todo_provider.dart';
 
 class AddEditScreen extends ConsumerStatefulWidget {
   final ToDo? todo;

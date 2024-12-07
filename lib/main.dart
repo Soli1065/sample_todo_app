@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:sample_todo_app/models/todo_model.dart';
+import 'package:sample_todo_app/features/todo/data/models/todo_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app.dart';
-import 'data/shared_preferences_service.dart';
+import 'core/data/shared_preferences_service.dart';
 
 void main() async {
 

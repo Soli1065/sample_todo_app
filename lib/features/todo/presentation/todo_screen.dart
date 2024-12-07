@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sample_todo_app/widgets/theme_switch.dart';
 
-import '../models/todo_model.dart';
-import '../providers/todo_provider.dart';
-import '../widgets/todo_tile.dart';
+import '../../../core/widgets/theme_switch.dart';
+import '../data/models/todo_model.dart';
 import 'add_edit_screen.dart';
+import 'provider/todo_provider.dart';
+import 'widgets/todo_tile.dart';
 
 
-class HomeScreen extends ConsumerWidget {
-  const HomeScreen({super.key});
+class TodoScreen extends ConsumerWidget {
+  const TodoScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

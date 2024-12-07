@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/todo_model.dart';
+import '../data/models/todo_model.dart';
 
 class DetailScreen extends StatelessWidget {
   final ToDo todo;

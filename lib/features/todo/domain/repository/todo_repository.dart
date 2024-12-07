@@ -1,6 +1,7 @@
 
-import '../data/local_storage_service.dart';
-import '../models/todo_model.dart';
+
+import '../../data/models/todo_model.dart';
+import '../../data/services/local_storage_service.dart';
 
 class ToDoRepository {
   final LocalStorageService _localStorageService;

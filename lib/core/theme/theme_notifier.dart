@@ -1,7 +1,7 @@
-// providers/theme_notifier.dart
 import 'package:riverpod/riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../data/shared_preferences_service.dart';
 
 class ThemeNotifier extends StateNotifier<ThemeMode> {

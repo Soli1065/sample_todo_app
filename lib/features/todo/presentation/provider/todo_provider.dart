@@ -1,9 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../data/local_storage_service.dart';
-import '../models/todo_model.dart';
-import '../repositories/todo_repository.dart';
-
+import '../../data/models/todo_model.dart';
+import '../../data/services/local_storage_service.dart';
+import '../../domain/repository/todo_repository.dart';
 
 // LocalStorageService Provider
 final localStorageServiceProvider = Provider<LocalStorageService>((ref) {

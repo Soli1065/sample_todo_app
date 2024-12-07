@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sample_todo_app/providers/theme_notifier.dart';
+import 'package:sample_todo_app/core/theme/theme_notifier.dart';
 
-import 'screens/home_screen.dart';
+import 'features/todo/presentation/todo_screen.dart';
 
 class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class MyApp extends ConsumerWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: const HomeScreen(),
+      home: const TodoScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
