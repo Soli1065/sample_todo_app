@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SettingsScreen extends StatefulWidget {
+import '../../../core/widgets/theme_switch.dart';
+
+class SettingsScreen extends ConsumerWidget{
   const SettingsScreen({super.key});
 
   @override
-  State<SettingsScreen> createState() => _SettingsScreenState();
-}
-
-class _SettingsScreenState extends State<SettingsScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
+      body: SizedBox(
+        width: double.maxFinite,
+        height: double.maxFinite,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Light '),
+            ThemeSwitch(),
+            Text(' Dark')
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sample_todo_app/core/theme/theme_data.dart';
 import 'package:sample_todo_app/core/theme/theme_notifier.dart';
+import 'package:sample_todo_app/features/home/home_screen.dart';
 
-import 'features/todo/presentation/todo_screen.dart';
 
 class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -11,13 +12,11 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeRef = ref.watch(themeNotifierProvider);
     return MaterialApp(
-      title: 'ToDo App',
+      title: 'My Sample App',
       themeMode: themeRef,
-      darkTheme: ThemeData.dark(),
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: const TodoScreen(),
+      darkTheme: themeDataDark,
+      theme: themeData,
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

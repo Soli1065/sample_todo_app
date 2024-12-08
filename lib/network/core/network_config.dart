@@ -1,6 +1,6 @@
 class NetworkConfig {
   // Base URL for the API
-  static const String baseUrl = 'https://api.example.com';
+  static const String baseUrl = 'https://reqres.in';
 
   // Timeout durations in milliseconds
   static const int connectTimeout = 15000; // 15 seconds

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../core/widgets/theme_switch.dart';
 import '../data/models/todo_model.dart';
 import 'add_edit_screen.dart';
 import 'provider/todo_provider.dart';
@@ -16,10 +14,6 @@ class TodoScreen extends ConsumerWidget {
     final todoList = ref.watch(todoListProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ToDo App'),
-        actions: const [ThemeSwitch()],
-      ),
       body: todoList.isEmpty
           ? const Center(
         child: Text('No ToDos available! Add one now.'),
