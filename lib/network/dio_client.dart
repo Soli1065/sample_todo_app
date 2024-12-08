@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'network_config.dart';
-import 'interceptors/logging_interceptor.dart';
+
 import 'interceptors/error_interceptor.dart';
+import 'interceptors/logging_interceptor.dart';
+import 'network_config.dart';
+
 
 final dioClientProvider = Provider((ref) => DioClient());
 
@@ -22,7 +24,6 @@ class DioClient {
       headers: NetworkConfig.defaultHeaders,
     ));
 
-    // Add interceptors
     _dio.interceptors.addAll([
       LoggingInterceptor(),
       ErrorInterceptor(),
@@ -31,7 +32,6 @@ class DioClient {
 
   Dio get dio => _dio;
 
-  /// For dynamic configurations
   Dio buildDio({
     required String baseUrl,
     Map<String, dynamic>? headers,

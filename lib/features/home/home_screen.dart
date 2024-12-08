@@ -26,7 +26,7 @@ class HomeScreen extends ConsumerWidget {
         children: const [
           TodoScreen(),
           RestScreen(),
-          GraphqlScreen(),
+          GraphQLScreen(),
           SettingsScreen(),
         ],
       ),
