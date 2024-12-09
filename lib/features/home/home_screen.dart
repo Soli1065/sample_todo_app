@@ -14,7 +14,6 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Get current tab index
     final tabIndex = ref.watch(tabIndexProvider);
 
     return Scaffold(

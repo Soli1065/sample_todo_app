@@ -12,10 +12,8 @@ class ErrorInterceptor extends Interceptor {
       print('Error Body: ${err.response?.data}');
     }
 
-    // Map errors to custom error messages or types
     String errorMessage = _handleError(err);
 
-    // Create a new DioException with the modified message
     final updatedError = DioException(
       requestOptions: err.requestOptions,
       response: err.response,
@@ -27,7 +25,6 @@ class ErrorInterceptor extends Interceptor {
     print('Modified Error Message: $errorMessage');
     print('------------------------');
 
-    // Pass the updated error to the handler
     handler.next(updatedError);
   }
 
@@ -39,7 +36,6 @@ class ErrorInterceptor extends Interceptor {
     } else if (error.type == DioExceptionType.sendTimeout) {
       return 'Request send timeout. Please check your connection.';
     } else if (error.response != null) {
-      // Handle HTTP errors
       switch (error.response?.statusCode) {
         case 400:
           return 'Bad request. Please check your input.';
@@ -55,7 +51,6 @@ class ErrorInterceptor extends Interceptor {
           return 'Something went wrong. Please try again.';
       }
     } else {
-      // Fallback for unknown errors
       return 'Unexpected error occurred. Please try again.';
     }
   }

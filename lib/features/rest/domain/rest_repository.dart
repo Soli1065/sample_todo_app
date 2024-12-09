@@ -1,5 +1,3 @@
-
-
 import '../data/models/user.dart';
 import '../data/rest_service.dart';
 

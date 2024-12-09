@@ -1,7 +1,4 @@
-
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../data/models/user.dart';
 import '../../data/rest_service.dart';
 import '../../domain/rest_repository.dart';
@@ -33,7 +30,6 @@ class RestNotifier extends StateNotifier<AsyncValue<List<User>>> {
   Future<void> addUser(Map<String, dynamic> data) async {
     try {
       final user = await _restRepository.addUser(data);
-      // Update the state or handle as needed after adding the user
     } catch (e,m) {
       state = AsyncValue.error(e,m);
     }
@@ -42,7 +38,6 @@ class RestNotifier extends StateNotifier<AsyncValue<List<User>>> {
   Future<void> editUser(int id, Map<String, dynamic> data) async {
     try {
       final user = await _restRepository.editUser(id, data);
-      // Update the state or handle as needed after editing the user
     } catch (e,m) {
       state = AsyncValue.error(e,m);
     }
@@ -51,7 +46,6 @@ class RestNotifier extends StateNotifier<AsyncValue<List<User>>> {
   Future<void> removeUser(int id) async {
     try {
       await _restRepository.removeUser(id);
-      // Update the state or handle as needed after removing the user
     } catch (e,m) {
       state = AsyncValue.error(e,m);
     }

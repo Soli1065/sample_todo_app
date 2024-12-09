@@ -18,8 +18,6 @@ class _RestScreenState extends ConsumerState<RestScreen> {
   @override
   void initState() {
     super.initState();
-
-    // ref.read(restProvider.notifier).fetchUsers();
   }
 
   @override
@@ -42,7 +40,6 @@ class _RestScreenState extends ConsumerState<RestScreen> {
                 onPressed: () => ref.read(restProvider.notifier).removeUser(user.id),
               ),
               onTap: () {
-                // Handle user tap (show details or edit)
               },
             );
           },

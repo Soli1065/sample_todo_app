@@ -1,10 +1,9 @@
 import 'package:hive/hive.dart';
 import 'package:uuid/uuid.dart';
 
-// Part file for the Hive generator
 part 'todo_model.g.dart';
 
-@HiveType(typeId: 0) // Unique typeId for this model
+@HiveType(typeId: 0)
 class ToDo {
   @HiveField(0)
   final String id;
@@ -29,13 +28,12 @@ class ToDo {
     required this.createdAt,
   });
 
-  // Factory method for easy creation
   factory ToDo.create({
     required String title,
     required String description,
   }) {
     return ToDo(
-      id: const Uuid().v4(), // Generates a unique ID
+      id: const Uuid().v4(),
       title: title,
       description: description,
       isCompleted: false,
@@ -43,7 +41,6 @@ class ToDo {
     );
   }
 
-  // Method to toggle completion status
   ToDo toggleComplete() {
     return ToDo(
       id: id,

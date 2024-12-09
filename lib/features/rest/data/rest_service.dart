@@ -12,17 +12,6 @@ class RestService {
 
   RestService(this._dio);
 
-  // Future<List<User>?> getUsers() async {
-  //   try {
-  //     final response = await _dio.get('/api/users');
-  //     return (response.data['data'] as List).map((user) => User.fromJson(user)).toList();
-  //   } catch (e) {
-  //     // throw DioException.fromDioError(e);
-  //     print('Error: $e');
-  //     return null;
-  //   }
-  // }
-
   Future<List<User>?> getUsers(int page) async {
     try {
       final response = await _dio.get('https://reqres.in/api/users', queryParameters: {'page': 1});
@@ -44,7 +33,7 @@ class RestService {
     try {
       final response = await _dio.get('https://reqres.in/api/users/$id');
       if (response.statusCode == 200) {
-        final data = response.data['data']; // Access the nested 'data' object
+        final data = response.data['data'];
         return User.fromJson(data);
       }
       return null;
@@ -62,7 +51,6 @@ class RestService {
       final response = await _dio.get('/api/users/$id');
       return User.fromJson(response.data);
     } catch (e) {
-      // throw DioException.fromDioError(e);
       print('Error: $e');
       return null;
     }
@@ -73,7 +61,6 @@ class RestService {
       final response = await _dio.post('/api/users', data: data);
       return User.fromJson(response.data);
     } catch (e) {
-      // throw DioException.fromDioError(e);
       print('Error: $e');
       return null;
     }
@@ -84,7 +71,6 @@ class RestService {
       final response = await _dio.put('/api/users/$id', data: data);
       return User.fromJson(response.data);
     } catch (e) {
-      // throw DioException.fromDioError(e);
       print('Error: $e');
       return null;
     }
@@ -94,7 +80,6 @@ class RestService {
     try {
       await _dio.delete('/api/users/$id');
     } catch (e) {
-      // throw DioException.fromDioError(e);
       print('Error: $e');
       return null;
     }

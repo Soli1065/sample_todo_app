@@ -11,17 +11,9 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Hive
   await Hive.initFlutter();
-
-  // Register adapters if needed
-  // Example: Hive.registerAdapter(TodoModelAdapter());
   Hive.registerAdapter(ToDoAdapter());
-
   await Hive.openBox<ToDo>('todoBox');
-
-
-
 
   final prefs = await SharedPreferences.getInstance();
   runApp(ProviderScope(
